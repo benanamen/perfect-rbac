@@ -1,0 +1,39 @@
+{    "name": "krubio/perfect-rbac",
+    "description": "RBAC - Role Based Access",
+    "keywords": [
+        "Validaton"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Kevin Rubio",
+            "email": "ducatikevin@yahoo.com",
+            "homepage": "https://github.com/benanamen/perfect-rbac",
+            "role": "Developer"
+        }
+    ],
+    "require-dev": {
+        "codeception/codeception": "^5.0",
+        "codeception/module-asserts": "*",
+        "phpstan/phpstan": "^1.10",
+        "vimeo/psalm": "^5.12"
+    },
+    "require": {
+        "nunomaduro/phpinsights": "^2.8",
+        "krubio/perfect-database": "^0.1.0",
+      "ext-pdo": "*"
+    },
+    "config": {
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        }
+    },
+    "autoload": {
+        "files": [
+            "example/functions.php"
+        ],
+        "psr-4": {
+            "PerfectApp\\": "src/"
+        }
+    }
+}
