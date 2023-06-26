@@ -3,12 +3,6 @@ support_namespace: Support
 suites:
     unit:
         path: .
-        actor: UnitTester
-        modules:
-            enabled:
-                # add more modules here
-                - Asserts
-        step_decorators: ~
 
 settings:
     shuffle: true
@@ -20,3 +14,5 @@ paths:
     data: tests/Support/Data
 coverage:
     enabled: true
+    include:
+        - src/*
