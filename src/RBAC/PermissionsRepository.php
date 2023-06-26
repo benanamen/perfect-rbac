@@ -6,7 +6,7 @@ namespace PerfectApp\RBAC;
 
 use PDO;
 
-readonly class PermissionsRepository
+class PermissionsRepository
 {
     /**
      * @param PDO $pdo
