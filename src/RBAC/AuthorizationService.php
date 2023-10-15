@@ -6,7 +6,7 @@ namespace PerfectApp\RBAC;
 
 use Exception;
 
-readonly class AuthorizationService
+class AuthorizationService
 {
     /**
      * @param UserRolesRepository $userRolesRepository
