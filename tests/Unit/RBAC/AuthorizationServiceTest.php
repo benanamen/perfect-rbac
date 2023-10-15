@@ -26,7 +26,7 @@ class AuthorizationServiceTest extends TestCase
         $allowedRoles = ['admin', 'editor'];
 
         $this->userRolesRepository->expects($this->once())
-            ->method('getUserRole')
+            ->method('getUserRoles')
             ->with($userId)
             ->willReturn('admin');
 
@@ -41,7 +41,7 @@ class AuthorizationServiceTest extends TestCase
         $allowedRoles = ['admin', 'editor'];
 
         $this->userRolesRepository->expects($this->once())
-            ->method('getUserRole')
+            ->method('getUserRoles')
             ->with($userId)
             ->willReturn('subscriber');
 
@@ -56,7 +56,7 @@ class AuthorizationServiceTest extends TestCase
         $allowedRoles = ['admin', 'editor'];
 
         $this->userRolesRepository->expects($this->once())
-            ->method('getUserRole')
+            ->method('getUserRoles')
             ->with($userId)
             ->willReturn(null);
 
@@ -71,7 +71,7 @@ class AuthorizationServiceTest extends TestCase
         $allowedRoles = ['admin', 'editor'];
 
         $this->userRolesRepository->expects($this->once())
-            ->method('getUserRole')
+            ->method('getUserRoles')
             ->with($userId)
             ->willThrowException(new \Exception('Failed to fetch user role'));
 
@@ -86,7 +86,7 @@ class AuthorizationServiceTest extends TestCase
         $allowedRoles = [];
 
         $this->userRolesRepository->expects($this->once())
-            ->method('getUserRole')
+            ->method('getUserRoles')
             ->with($userId)
             ->willReturn(null);
 

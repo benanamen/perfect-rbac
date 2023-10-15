@@ -19,12 +19,12 @@ class UserRolesRepository
      * @param int $userId
      * @return mixed
      */
-    public function getUserRole(int $userId): mixed
+    public function getUserRoles(int $userId): mixed
     {
         $stmt = $this->pdo->prepare('SELECT r.role_name FROM user_roles ur
                                     JOIN roles r ON ur.role_id = r.role_id
                                     WHERE ur.user_id = ?');
         $stmt->execute([$userId]);
-        return $stmt->fetch(PDO::FETCH_ASSOC);
+        return $stmt->fetchAll(PDO::FETCH_COLUMN, 0);
     }
 }

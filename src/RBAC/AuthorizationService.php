@@ -23,7 +23,7 @@ class AuthorizationService
     public function isUserRoleAuthorized(int $userId, array $allowedRoles): bool
     {
         try {
-            $userRole = $this->userRolesRepository->getUserRole($userId);
+            $userRole = $this->userRolesRepository->getUserRoles($userId);
             return count(array_intersect((array)$userRole, $allowedRoles)) > 0;
         } catch (Exception $exception) {
             error_log('Exception occurred: ' . $exception->getMessage());

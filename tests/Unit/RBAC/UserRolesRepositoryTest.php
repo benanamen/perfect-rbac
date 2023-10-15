@@ -38,8 +38,9 @@ class UserRolesRepositoryTest extends TestCase
             INSERT INTO roles (role_id, role_name) VALUES (1, 'role1');
         ");
 
-        $userRole = $this->userRolesRepository->getUserRole(1);
-        $this->assertSame(['role_name' => 'role1'], $userRole);
+        $userRole = $this->userRolesRepository->getUserRoles(1);
+        //$this->assertSame(['role1' => 'role1'], $userRole);
+        $this->assertSame(['role1'], $userRole);
 
         // Test case 2: User role does not exist
         $this->pdo->exec("
@@ -50,11 +51,11 @@ class UserRolesRepositoryTest extends TestCase
             INSERT INTO roles (role_id, role_name) VALUES (2, 'role2');
         ");
 
-        $userRole = $this->userRolesRepository->getUserRole(2);
-        $this->assertSame(false, $userRole);
+        $userRole = $this->userRolesRepository->getUserRoles(2);
+        $this->assertSame([], $userRole);
 
         // Test case 3: User ID does not exist
-        $userRole = $this->userRolesRepository->getUserRole(999);
-        $this->assertSame(false, $userRole);
+        $userRole = $this->userRolesRepository->getUserRoles(999);
+        $this->assertSame([], $userRole);
     }
 }
