@@ -2,7 +2,6 @@
 
 namespace Unit\RBAC;
 
-use Exception;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
 use PerfectApp\RBAC\AuthorizationService;
