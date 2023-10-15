@@ -6,7 +6,7 @@ namespace PerfectApp\RBAC;
 
 use PDO;
 
-class UserRolesRepository
+readonly class UserRolesRepository
 {
     /**
      * @param PDO $pdo
@@ -17,9 +17,9 @@ class UserRolesRepository
 
     /**
      * @param int $userId
-     * @return mixed
+     * @return array|false
      */
-    public function getUserRoles(int $userId): mixed
+    public function getUserRoles(int $userId): array|false
     {
         $stmt = $this->pdo->prepare('SELECT r.role_name FROM user_roles ur
                                     JOIN roles r ON ur.role_id = r.role_id

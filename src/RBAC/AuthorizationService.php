@@ -6,7 +6,7 @@ namespace PerfectApp\RBAC;
 
 use Exception;
 
-class AuthorizationService
+readonly class AuthorizationService
 {
     /**
      * @param UserRolesRepository $userRolesRepository
@@ -17,7 +17,7 @@ class AuthorizationService
 
     /**
      * @param int $userId
-     * @param array<mixed> $allowedRoles
+     * @param array $allowedRoles
      * @return bool
      */
     public function isUserRoleAuthorized(int $userId, array $allowedRoles): bool
