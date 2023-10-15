@@ -6,6 +6,9 @@ namespace PerfectApp\RBAC;
 
 use PDO;
 
+/**
+ *
+ */
 class UserRolesRepository
 {
     /**
